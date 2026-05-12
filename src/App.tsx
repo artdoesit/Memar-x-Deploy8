@@ -9,15 +9,15 @@ function Header() {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-      className="absolute top-0 left-0 w-full p-6 md:p-8 flex justify-between items-center z-50 mix-blend-difference"
+      className="absolute top-0 left-0 w-full p-4 md:p-8 flex justify-between items-center z-50 mix-blend-difference"
     >
-      <div className="font-serif text-xl md:text-2xl tracking-widest text-[#f5f2ed]">AETERNA</div>
+      <div className="font-serif text-lg md:text-2xl tracking-widest text-[#f5f2ed]">AETERNA</div>
       <nav className="hidden md:flex gap-8 text-xs tracking-[0.2em] uppercase text-[#f5f2ed]/70">
         <a href="#vision" className="hover:text-white transition-colors p-2">Vision</a>
         <a href="#structure" className="hover:text-white transition-colors p-2">Structure</a>
         <a href="#materials" className="hover:text-white transition-colors p-2">Materials</a>
       </nav>
-      <button className="text-xs tracking-[0.1em] uppercase border border-[#f5f2ed]/30 rounded-full px-6 py-3 min-h-[44px] hover:bg-[#f5f2ed] hover:text-black transition-all flex items-center justify-center">
+      <button className="text-[10px] md:text-xs tracking-[0.1em] uppercase border border-[#f5f2ed]/30 rounded-full px-4 md:px-6 py-2 md:py-3 min-h-[36px] md:min-h-[44px] hover:bg-[#f5f2ed] hover:text-black transition-all flex items-center justify-center">
         Enquire
       </button>
     </motion.header>
@@ -47,12 +47,12 @@ function Hero() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,#050505_100%)] opacity-40" />
       </div>
 
-      <motion.div style={{ y: y1, opacity }} className="text-center z-10 px-4">
+      <motion.div style={{ y: y1, opacity }} className="text-center z-10 px-6">
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.5 }}
-          className="text-xs tracking-[0.3em] uppercase text-[#f5f2ed]/50 mb-6"
+          className="text-[10px] md:text-xs tracking-[0.3em] uppercase text-[#f5f2ed]/50 mb-4 md:mb-6"
         >
           Precision meets Eternity
         </motion.p>
@@ -60,13 +60,27 @@ function Hero() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-          className="font-serif text-5xl sm:text-7xl md:text-9xl font-light tracking-tighter leading-none mb-6"
+          className="font-serif text-5xl sm:text-7xl md:text-9xl font-light tracking-tighter leading-[0.9] mb-6"
         >
           KINETIC<br /><span className="italic text-[#f5f2ed]/80">Form</span>
         </motion.h1>
       </motion.div>
 
-
+      {/* Mobile-optimized scroll indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 2, duration: 1 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2"
+      >
+        <span className="text-[8px] uppercase tracking-[0.4em] text-[#f5f2ed]/30">Explore</span>
+        <motion.div
+          animate={{ y: [0, 5, 0] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <ChevronDown className="w-4 h-4 text-[#f5f2ed]/30" />
+        </motion.div>
+      </motion.div>
     </div>
   );
 }
